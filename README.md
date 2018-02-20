@@ -1,6 +1,11 @@
 # javascript_utils
 collect javascript functions
 
+- left padding
+- duplicate
+
+
+
 
 
 ### left padding
@@ -30,7 +35,8 @@ function leftpadding(str, width, ch){
 ```javascript
 // duplicate
 function duplicate(str, count){
-    tmp = '';
+    count--;
+    tmp = str;
     while(true){
         if(count & 1) str = tmp + str;
         count >>= 1;
@@ -39,8 +45,10 @@ function duplicate(str, count){
     }
     return str;
 }
-duplicate('ab', 1); // ab
-duplicate('ab', 2); // abab
+console.log(duplicate('ab', 1)); // ab
+console.log(duplicate('ab', 2)); // abab
+console.log(duplicate('ab', 3)); // ababab
+console.log(duplicate('ab', 4)); // abababab
 ```
 
 
@@ -52,4 +60,6 @@ function isArray(arr){
     return {}.toString.call(arr) === '[object Array]';
 }
 ```
+
+
 
