@@ -3,6 +3,9 @@ collect javascript functions
 
 - left padding
 - duplicate
+- isArray
+- duplicate II
+- throttle
 
 
 
@@ -62,4 +65,34 @@ function isArray(arr){
 ```
 
 
+
+### duplicate II
+
+```javascript
+// duplicate([1,2,3,4,5]); // [1,2,3,4,5,1,2,3,4,5]
+
+function duplicate(arr){
+  return a.concat(a);
+}
+
+```
+
+
+
+### debounce/throttle
+
+```javascript
+function throttle(fx, limit){
+  var wait = false;
+  return function(){
+    if(!wait){
+      wait = true;
+      fx();
+      setTimeout(()=>{
+        wait = true
+      },limit)
+    }
+  }
+}
+```
 
