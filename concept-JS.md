@@ -1,6 +1,7 @@
 # concept-JS
 
-- Enumerate the properties of an object
+- difference between apply and call
+- enumerate the properties of an object
 - object copy using Object.assign()
 - Array.prototype.slice.call
 - difference between throttle and debounce
@@ -11,6 +12,18 @@
 - What's the difference between an "attribute" and a "property"?
 - What are the differences between variables created using `let`, `var` or `const`?
 
+
+
+
+### difference between apply and call
+
+
+
+```javascript
+	foo.call(this, arg1,arg2,arg3) 
+ == foo.apply(this, arguments)
+ == this.foo(arg1, arg2, arg3)
+```
 
 
 
