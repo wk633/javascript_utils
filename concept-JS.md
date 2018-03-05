@@ -1,4 +1,4 @@
-# concept
+# concept-JS
 
 
 
@@ -8,6 +8,7 @@
 - Can you describe the main difference between a `forEach` loop and a `.map()` loop and why you would pick one versus the other?
 - What's the difference between an "attribute" and a "property"?
 - What are the differences between variables created using `let`, `var` or `const`?
+
 
 
 
