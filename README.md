@@ -5,7 +5,8 @@ collect javascript functions
 - duplicate
 - isArray
 - duplicate II
-- throttle
+- debounce/throttle
+- reduce to count frequency
 
 
 
@@ -85,14 +86,79 @@ function duplicate(arr){
 function throttle(fx, limit){
   var wait = false;
   return function(){
+    let context = this;
+    let args = arguments;
     if(!wait){
       wait = true;
-      fx();
+      fx.apply(context, args);
       setTimeout(()=>{
         wait = true
       },limit)
     }
   }
 }
+
+
+function debounce(fn, delay) {
+  // maintain a timer
+  let timer = null;
+  // closure function that has access to timer
+  return function() {
+    // get the scope and parameters of the function 
+    // via 'this' and 'arguments'
+    let context = this;
+    let args = arguments;
+    // if event is called, clear the timer and start over
+    clearTimeout(timer);
+    timer = setTimeout(function() {
+      fn.apply(context, args);
+    }, delay);
+  }
+}
 ```
+
+
+
+throttle
+
+- 函数触发一次后间隔一段时间后才能被触发（触发一次后，引发延时，延时结束后才可以再被触发）
+- settimeout 里修改的是是否wait
+
+debounce
+
+- 等到一段时间后才触发（如果一直引发的debounce，则会不断后推迟）
+- 进入后立即clearTimeout
+- settimeout里面运行函数
+
+
+
+### reduce to count frequency
+
+```javascript
+var inputWords = ['Apple', 'Banana', 'Apple', 'Durian', 'Durian', 'Durian']
+
+console.log(countWords(inputWords))
+
+// =>
+// {
+//   Apple: 2,
+//   Banana: 1,
+//   Durian: 3
+// }
+```
+
+```javascript
+function countWords(inputWords){
+  return inputWords.reduce(function(map, item){
+    map[item] = ++map[item] || 1
+    return map;
+  }, {})
+}
+```
+
+
+
+
+
+
 
