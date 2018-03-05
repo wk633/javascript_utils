@@ -1,7 +1,7 @@
 # concept-JS
 
-
-
+- Enumerate the properties of an object
+- object copy using Object.assign()
 - Array.prototype.slice.call
 - difference between throttle and debounce
 - what is closure
@@ -14,7 +14,37 @@
 
 
 
+### enumerate the properties of an object
 
+- for in loop
+  - traverses ==all enumerable properties== of an object and its ==prototype chain==
+- Object.keys(o)
+  - returns an array with all the own (not in the prototype chain) enumerable properties' names ("keys") of an object `o`
+- Object.getOwnPropertyNames(o)
+  - returns an array containing all own properties' names (enumerable or not) of an object `o`
+
+[Objects in javascript : object.assign/deep copy](https://medium.com/@tkssharma/objects-in-javascript-object-assign-deep-copy-64106c9aefab)
+
+
+
+### object copy in JS
+
+```javascript
+let obj = {
+  a: 1,
+  b: {
+    c: 2,
+  },
+}
+let newObj = Object.assign({}, obj);
+```
+
+problem:
+
+- Object.assign only do shallow copy
+- Properties on the prototype chain and non-enumerable properties cannot be copied.
+
+[Copying Objects in JavaScript](https://scotch.io/bar-talk/copying-objects-in-javascript)
 
 
 
