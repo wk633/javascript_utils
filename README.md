@@ -8,6 +8,8 @@ collect javascript functions
 - debounce/throttle
 - reduce to count frequency
 - isArray
+- currify sum function
+- currySum
 
 
 
@@ -175,4 +177,53 @@ function myIsArray(arg){
 ```
 
 
+
+### currify sum function
+
+```javascript
+let sum = function(a, b){
+    return a + b;
+}
+let curry = function(fx){
+    var length = fx.length;
+    return function f1(){
+        var args = Array.prototype.slice.call(arguments);
+        if(args.length >= length){
+            return fx.apply(null, args)
+        }else{
+            return function f2(){
+                var args2 = Array.prototype.slice.call(arguments);
+                return f1.apply(null, args.concat(args2));
+            }
+        }
+    }
+}
+let add = curry(sum);
+console.log(add(2,5));
+console.log(add(2)(5));
+console.log(add()(2)(5));
+```
+
+
+
+### currySum
+
+```javascript
+// support any length of arguments
+function currySum(){
+  let tmpSum = 0;
+  return function f1(arg){
+    if(arguments.length == 0){return tmpSum}
+    for(let i = 0; i < arguments.length; i++){
+      tmpSum += arguments[i];
+    }
+    return f1;
+  }
+}
+
+var mySum1 = currySum();
+var mySum2 = currySum();
+console.log(mySum1(1)(1)(3)()); // 5
+console.log(mySum3(1,2,4)()); // 7
+```
 
