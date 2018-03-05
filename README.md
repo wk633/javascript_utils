@@ -35,7 +35,7 @@ function leftpadding(str, width, ch){
 
 
 
-### duplicate
+### duplicate/repeat
 
 ```javascript
 // duplicate
@@ -56,15 +56,20 @@ console.log(duplicate('ab', 3)); // ababab
 console.log(duplicate('ab', 4)); // abababab
 ```
 
-
-
-### isArray
-
 ```javascript
-function isArray(arr){
-    return {}.toString.call(arr) === '[object Array]';
+const repeat = (str = '', times = 1)=>{
+  let rst = '';
+  if(!str || times < 1) return rst;
+  while(times){
+    if(times % 2) rst += str;
+    times = Math.floor(times / 2);
+    if(times) str += str;
+  }
+  return rst;
 }
 ```
+
+
 
 
 
