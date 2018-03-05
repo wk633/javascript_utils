@@ -7,6 +7,7 @@ collect javascript functions
 - duplicate II
 - debounce/throttle
 - reduce to count frequency
+- isArray
 
 
 
@@ -158,7 +159,15 @@ function countWords(inputWords){
 
 
 
+### isArray
 
+```javascript
+function myIsArray(arg){
+  if(Array.isArray) return Array.isArray(arg);
+  else
+    return Object.prototype.toString.call(arg) === '[object Array]';
+}
+```
 
 
 
