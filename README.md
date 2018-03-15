@@ -10,6 +10,7 @@ collect javascript functions
 - isArray
 - currify sum function
 - currySum
+- flatten an array
 
 
 
@@ -225,5 +226,59 @@ var mySum1 = currySum();
 var mySum2 = currySum();
 console.log(mySum1(1)(1)(3)()); // 5
 console.log(mySum3(1,2,4)()); // 7
+```
+
+
+
+### flatten an array
+
+```javascript
+const flatten = (arr) => {
+    return arr.reduce((pre, val)=>{
+        if(Array.isArray(val)){
+            return pre.concat(flatten(val));
+        }else{
+            return pre.concat(val);
+        }
+    },[])
+}
+flatten([1,2,3,[4,5,[6]]]); //[1, 2, 3, 4, 5, 6]
+```
+
+non-recursive
+
+```javascript
+flatten = (arr)=>{
+    let rst = [];
+    let queue = arr.slice(0);
+    while(queue.length != 0){
+        let cur = queue.shift();
+        if(Array.isArray(cur)){
+            queue = cur.concat(queue);
+        }else{
+            rst.push(cur);
+        }
+    }
+    return rst;
+}
+```
+
+fast non-recursive
+
+```javascript
+fastFlatten = (arr)=>{
+    let rst = [];
+    let stack = arr.reverse();
+    while(stack.length != 0){
+        let cur = stack.pop();
+        if(Array.isArray(cur)){
+            cur.reverse();
+            stack.concat(cur);
+        }else{
+            rst.push(cur);
+        }
+    }
+    return rst;
+}
 ```
 
