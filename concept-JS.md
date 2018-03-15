@@ -15,9 +15,9 @@
 
 
 
+
+
 ### difference between apply and call
-
-
 
 ```javascript
 	foo.call(this, arg1,arg2,arg3) 
@@ -128,6 +128,31 @@ unlike `map()`or `reduce()` it always returns the value `undefined` and is not c
 `map`: creates ==a new array== with the results of calling a provided function on every element in this array.
 
 map会return一个新的copy
+
+
+
+```javascript
+var Arr = [1,2,3,4,5,6,7,8];
+var P = Arr.map((index,i,arr)=>{
+  var I = index-2;
+  return I;
+})
+console.log("P",P)       //是[-1, 0, 1, 2, 3, 4, 5, 6]
+console.log("Arr",Arr)  //[1, 2, 3, 4, 5, 6, 7, 8]
+
+var Arr = [1, 2, 3, 4, 5, 6, 7, 8];
+var sum = 0;
+Arr.forEach(function (index, i, arr) {
+  // if use arr[i] = index*2, original array will be modified
+  sum = index-2
+  //no return
+})
+console.log(sum)//6
+console.log(Arr)
+// [1, 2, 3, 4, 5, 6, 7, 8]
+```
+
+[map和forEach的区别](https://www.jianshu.com/p/607668e607dd)
 
 
 
