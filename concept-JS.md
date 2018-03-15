@@ -1,5 +1,6 @@
 # concept-JS
 
+- Array slice and splice
 - difference between apply and call
 - enumerate the properties of an object
 - object copy using Object.assign()
@@ -14,6 +15,31 @@
 
 
 
+
+### Array slice and splice
+
+```javascript
+a = [1,2,3,4];
+b = a.slice(0); // get a copy of original array
+c = a.slice(1,3); // [2,3]
+```
+
+```javascript
+// array.splice(start[, deleteCount[, item1[, item2[, ...]]]])
+
+var months = ['Jan', 'March', 'April', 'June'];
+months.splice(1, 0, 'Feb');
+// inserts at 1st index position
+console.log(months);
+// expected output: Array ['Jan', 'Feb', 'March', 'April', 'June']
+
+months.splice(4, 1, 'May');
+// replaces 1 element at 4th index
+console.log(months);
+// expected output: Array ['Jan', 'Feb', 'March', 'April', 'May']
+```
+
+[Array.prototype.splice()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice)
 
 
 
