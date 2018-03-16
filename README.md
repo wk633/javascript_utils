@@ -28,7 +28,7 @@ function leftpadding(str, width, ch){
     while(true){
         if(len & 1) padding += ch;
         len >>= 1;
-        if(len) padding += padding;
+        if(len) ch += ch;
         else break;
     }
     return padding + str;
