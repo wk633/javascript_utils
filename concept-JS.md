@@ -1,5 +1,6 @@
 # concept-JS
 
+- Javascript Hoisting
 - Array slice and splice
 - difference between apply and call
 - enumerate the properties of an object
@@ -13,6 +14,30 @@
 - What's the difference between an "attribute" and a "property"?
 - What are the differences between variables created using `let`, `var` or `const`?
 
+
+
+
+### What's Javascript Hoisting
+
+a javascript default behavior, moving ==declaration== to the top
+
+```javascript
+x = 5; // Assign 5 to x
+var x; // Declare x
+```
+
+initialization are not hoisted
+
+```javascript
+var x = 5; // Initialize x
+
+elem = document.getElementById("demo"); // Find an element 
+elem.innerHTML = x + " " + y;           // Display x and y
+
+var y = 7; // Initialize y
+```
+
+in this case y is ==undefined==
 
 
 
