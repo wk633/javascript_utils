@@ -11,6 +11,7 @@ collect javascript functions
 - currify sum function
 - currySum
 - flatten an array
+- reduce array
 
 
 
@@ -282,3 +283,45 @@ fastFlatten = (arr)=>{
 }
 ```
 
+
+
+### reduce array
+
+var endorsements = [
+  { skill: 'javascript', user: 'Chad' },
+  { skill: 'javascript', user: 'Bill' },
+  { skill: 'css', user: 'Sue' },
+  { skill: 'javascript', user: 'Sue' },
+  { skill: 'css', user: 'Bill' },
+  { skill: 'html', user: 'Sue' }
+];
+
+=>
+
+// Result
+[
+  { skill: 'javascript', user: [ 'Chad', 'Bill', 'Sue' ], count: 3 },
+  { skill: 'css', user: [ 'Sue', 'Bill' ], count: 2 },
+  { skill: 'html', user: [ 'Sue' ], count: 1 }
+];
+
+```javascript
+endorsements.reduce((prev, cur)=>{
+    let obj = prev.find((item)=>{return item.skill == cur.skill});
+    if(obj){
+        obj.user.push(cur.user);
+        obj.count++;
+    }else{
+        prev.push({
+            skill: cur.skill,
+            user: [cur.user],
+            count: 1
+        });
+    }
+    return prev;
+},[])
+```
+
+
+
+source: http://www.1point3acres.com/bbs/thread-190498-1-1.html
