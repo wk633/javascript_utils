@@ -87,6 +87,27 @@ console.log(months);
 - Object.getOwnPropertyNames(o)
   - returns an array containing all own properties' names (enumerable or not) of an object `o`
 
+
+
+hasOwnProperty():  return a boolean whether the object has the specified property as its own property 
+
+```javascript
+function showProps(obj, objName) {
+  var result = '';
+  for (var i in obj) {
+    // obj.hasOwnProperty() is used to filter out properties from the object's prototype chain
+    if (obj.hasOwnProperty(i)) {
+      result += objName + '.' + i + ' = ' + obj[i] + '\n';
+    }
+  }
+  return result;
+}
+```
+
+
+
+
+
 [Objects in javascript : object.assign/deep copy](https://medium.com/@tkssharma/objects-in-javascript-object-assign-deep-copy-64106c9aefab)
 
 
