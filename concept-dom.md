@@ -14,7 +14,7 @@ Document Object Model (DOM) is a programming interface for HTML and XML document
 
 
 
-###difference between bubbling and capturing
+###Difference between bubbling and capturing
 
 
 
@@ -42,7 +42,7 @@ A handler on a parent element can always get the details about where it actually
 
 
 
-### describes 3 phases of event propagation
+### Describes 3 phases of event propagation
 
 1. Capturing phase – the event goes down to the element.
 2. Target phase – the event reached the target element.
@@ -56,7 +56,7 @@ Notes: html can be accessed by ==document.documentElement== not document.html
 
 
 
-###what's event delegation
+###What's event delegation
 
 before
 

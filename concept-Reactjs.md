@@ -2,11 +2,22 @@
 
 ## outline-React
 
+- What's React
 - features of React
 - major advantages of React
 - what do you understand by Virtual DOM
 - ES6 syntax using React
 - how to update state of a component
+
+
+
+
+### What's React
+
+React is an open source Javascript library created by Facebook for building complex, interactive UIs in website and mobiles
+
+https://www.codementor.io/blog/5-essential-reactjs-interview-questions-du1084ym1
+
 
 
 
@@ -18,6 +29,8 @@
 
 
 
+
+
 ### major advantages of React
 
 - increase application performance
@@ -25,6 +38,8 @@
 - JSX increase readability
 - easy to integrate with other frameworks like Meteor
 - writing UI test cases become extremely easy
+
+
 
 
 
@@ -105,6 +120,8 @@ using a central Store, it ==controls derived data== and ==enables communication=
 - single source of truth(one store)
 - state is read-only
 - changes are made with pure functions
+
+
 
 
 

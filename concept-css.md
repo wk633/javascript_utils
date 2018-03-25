@@ -107,7 +107,8 @@ ways to create BFC
 elements do not break the flow. 
 
 - margin/ padding will push other elements horizontally not vertically. 
-- ignores height and width.
+- ==ignores== height and width.
+-  only `margin-left`, `margin-right`, `padding-left`, `padding-right`
 
 `block`
 
@@ -119,7 +120,20 @@ breaks the flow and dont sits inline.
 
  will be similar to inline and will go with the flow of the page. 
 
-has height and width.
+has height and width.`margin`, `padding`, `height`, `width`
 
 
 
+
+
+
+
+### Flex display
+
+justify-content: defines the alignment along the main axis
+
+aligin-items: defines the default behaviour for how flex items are laid out along the cross axis 
+
+
+
+align-self: allows the default alignment (or the one specified by `align-items`) to be overridden for individual flex items.(调节垂直方向的对其方式)
