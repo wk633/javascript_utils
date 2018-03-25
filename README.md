@@ -44,15 +44,14 @@ function leftpadding(str, width, ch){
 ```javascript
 // duplicate
 function duplicate(str, count){
-    count--;
-    tmp = str;
-    while(true){
-        if(count & 1) str = tmp + str;
-        count >>= 1;
-        if (count) tmp += tmp;
-        else break;
-    }
-    return str;
+	let rst = '';
+	while(true){
+		if(count & 1) rst += str;
+		count >>= 1;
+		if(count) str += str;
+		else break;
+	}
+	return rst;
 }
 console.log(duplicate('ab', 1)); // ab
 console.log(duplicate('ab', 2)); // abab
