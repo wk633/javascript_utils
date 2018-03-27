@@ -1,5 +1,7 @@
 # concept-JS
 
+- Explain Symbol in ES6
+- Explain Async/Await
 - Javascript Hoisting
 - Array slice and splice
 - difference between apply and call
@@ -14,6 +16,88 @@
 - What's the difference between an "attribute" and a "property"?
 - What are the differences between variables created using `let`, `var` or `const`?
 
+
+
+
+
+
+### Explain Symbol in ES6
+
+`Symbol` is a new primitive type introduced in ES6.
+
+```javascript
+let mySymbol = Symbol();
+typeof mySymbol; // 'symbol'
+```
+
+cannot be used as `new Symbol()`, Symbol() is a factory function.
+
+Each Symbol has unique ID and will not clash with other Symbols, even if passed the same description. So using Sysmbol as property keys and method definitions.
+
+```javascript
+let mySymKey = Symbol();
+let mySymMethod = Symbol();
+
+let object = {
+
+    [mySymKey]: "value",
+    [mySymMethod]() {
+       return "some actions";
+    } 
+
+}
+
+console.log(object[mySymKey]); //"value"
+console.log(object[mySymMethod]()) //"some actions"
+```
+
+
+
+https://www.webquestions.co/questions/es6-interview-questions
+
+
+
+### Explain Async/Await
+
+async/await is introduced in ES8 and serve as a new feature for cleaner handler of Promise response and errors
+
+benefits:
+
+- less code
+- synchronous feel for asynchronous code
+- easier error handlering
+
+
+
+```javascript
+const getData = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("data");
+    }, 3000);
+  });
+}
+
+// promise way
+const makeAsync = () => {
+    getData().then(data => { 
+        console.log(data);
+    });
+
+}
+// async way
+const makeAsync = async () => {
+  const result = await getData();
+    console.log(result);
+  
+}
+
+makeAsync(); //"data" after 3 seconds.
+```
+
+
+
+https://www.webquestions.co/questions/es6-interview-questions
 
 
 
