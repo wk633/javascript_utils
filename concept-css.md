@@ -137,3 +137,11 @@ aligin-items: defines the default behaviour for how flex items are laid out alon
 
 
 align-self: allows the default alignment (or the one specified by `align-items`) to be overridden for individual flex items.(调节垂直方向的对其方式)
+
+
+
+### Display: none VS visibility: hidden
+
+visibility: hidden, The element will be hidden, but still affect the layout
+
+display: none, corresponding dom will disappear and cause repant.
