@@ -101,7 +101,7 @@ function throttle(fx, limit){
       wait = true;
       fx.apply(context, args);
       setTimeout(()=>{
-        wait = true
+        wait = false;
       },limit)
     }
   }
